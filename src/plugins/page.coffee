@@ -4,6 +4,7 @@ async = require 'async'
 underscore = require 'underscore'
 moment = require 'moment'
 typogr = require 'typogr'
+marked = require 'marked'
 
 {ContentPlugin} = require './../content'
 {stripExtension, extend} = require './../common'
@@ -55,6 +56,7 @@ class Page extends ContentPlugin
           _: underscore
           moment: moment
           typogr: typogr
+          marked: marked
         extend ctx, locals
         template.render ctx, callback
     ], callback
