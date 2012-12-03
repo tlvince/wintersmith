@@ -47,6 +47,8 @@ class ContentPlugin extends Model
       base += '/'
     if process.platform is 'win32'
       filename = filename.replace /\\/g, '/' #'
+    filename = filename.replace(/\.html$/, '').replace(/index/, '')
+    filename = filename.replace(/journal\/entry\//, '')
     url.resolve base, filename
 
   # some shorthands
