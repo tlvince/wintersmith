@@ -40,7 +40,7 @@
     "minimatch": "0.2.x",
     "mime": "1.2.x",
     "moment": "1.7.x",
-    "typogr": "git+https://github.com/tlvince/typogr.js#tlvince"
+    "typogr": "git+https://github.com/tlvince/typogr.js"
   },
   "engine": {
     "node": ">=0.6"
