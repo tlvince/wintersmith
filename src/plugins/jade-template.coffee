@@ -4,6 +4,7 @@ jade = require 'jade'
 fs = require 'fs'
 path = require 'path'
 identify = require 'identify'
+typogr = require 'typogr'
 
 {TemplatePlugin} = require './../templates'
 
@@ -14,6 +15,7 @@ class JadeTemplate extends TemplatePlugin
   render: (locals, callback) ->
     try
       rendered = @fn locals
+      rendered = typogr.typogrify rendered
       identified = identify rendered
       callback null, new Buffer identified
     catch error
