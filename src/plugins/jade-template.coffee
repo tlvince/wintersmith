@@ -3,6 +3,7 @@ async = require 'async'
 jade = require 'jade'
 fs = require 'fs'
 path = require 'path'
+identify = require 'identify'
 
 {TemplatePlugin} = require './../templates'
 
@@ -12,7 +13,9 @@ class JadeTemplate extends TemplatePlugin
 
   render: (locals, callback) ->
     try
-      callback null, new Buffer @fn(locals)
+      rendered = @fn locals
+      identified = identify rendered
+      callback null, new Buffer identified
     catch error
       callback error
 
