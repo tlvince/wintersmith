@@ -16,7 +16,9 @@ class JadeTemplate extends TemplatePlugin
     try
       rendered = @fn locals
       rendered = typogr.typogrify rendered
-      identified = identify rendered
+      identified = identify rendered,
+        block_elements: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p']
+        anchor: true
       callback null, new Buffer identified
     catch error
       callback error
