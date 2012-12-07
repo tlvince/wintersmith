@@ -41,7 +41,7 @@
     "mime": "1.2.x",
     "moment": "1.7.x",
     "typogr": "git+https://github.com/tlvince/typogr.js",
-    "identify": "~0.1.1"
+    "identify": "~0.1.3"
   },
   "engine": {
     "node": ">=0.6"
