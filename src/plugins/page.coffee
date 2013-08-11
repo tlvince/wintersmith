@@ -39,7 +39,8 @@ module.exports = (env, callback) ->
 
     getUrl: (base) ->
       # remove index.html for prettier links
-      super(base).replace /index\.html$/, ''
+      url = super(base).replace /index\.html$/, ''
+      if url is '/' then url else url[...-1]
 
     getView: ->
       @metadata.view or 'template'
